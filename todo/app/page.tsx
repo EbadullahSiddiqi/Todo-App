@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PlusCircle, Trash2, CheckCircle2 } from "lucide-react";
-import { createClient } from "@/utils/supabase/client";
+// import { createClient } from "@/utils/supabase/client";
 
 interface Todo {
   id: number;
@@ -15,7 +15,7 @@ export default function TodosPage() {
   const [newTodo, setNewTodo] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const supabase = createClient();
+  // const supabase = createClient();
 
   useEffect(() => {
     fetchTodos();

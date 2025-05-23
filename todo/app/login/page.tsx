@@ -1,15 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { emailLogin } from "./action";
 import { signup } from "./action";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -63,10 +60,6 @@ export default function LoginPage() {
               />
             </div>
           </div>
-
-          {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
-          )}
 
           <div className="flex items-center justify-between">
             <div className="flex items-center">
