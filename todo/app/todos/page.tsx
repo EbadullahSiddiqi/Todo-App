@@ -63,14 +63,16 @@ export default function TodosPage() {
       }
 
       const result = await response.json();
-      
+
       if (result.data) {
         setTodos([...todos, result.data[0]]);
         setNewTodo("");
       }
     } catch (error) {
       console.error("Error creating todo:", error);
-      setError(error instanceof Error ? error.message : "Failed to create todo");
+      setError(
+        error instanceof Error ? error.message : "Failed to create todo"
+      );
     }
   };
 
@@ -124,9 +126,7 @@ export default function TodosPage() {
                   Add
                 </button>
               </div>
-              {error && (
-                <p className="text-red-500 text-sm mt-1">{error}</p>
-              )}
+              {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
             </div>
           </form>
 
